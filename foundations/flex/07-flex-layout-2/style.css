@@ -1,29 +1,81 @@
+/* --- Global Styles --- */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* --- Header --- */
 .header {
   height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 32px;
+  font-weight: 900;
   background: darkmagenta;
   color: white;
 }
 
+/* --- Footer --- */
 .footer {
   height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #eee;
   color: darkmagenta;
 }
 
-.sidebar {
-  width: 300px;
-  background: royalblue;
-  box-sizing: border-box;
+/* --- Main Content Area --- */
+.body {
+  flex: 1;               /* fills space between header & footer */
+  display: flex;         /* sidebar and cards side by side */
 }
 
+/* --- Sidebar --- */
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;        /* don't shrink */
+  padding: 16px;
+  background: royalblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 16px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  display: block;
+}
+
+/* --- Card Container --- */
+.container {
+  flex: 1;               /* takes remaining horizontal space */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 48px;
+}
+
+/* --- Individual Cards --- */
 .card {
+  width: 300px;           /* sets 2 columns on desktop */
+  padding: 16px;
   border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
 }
